@@ -104,9 +104,11 @@ try {
 
     addressBook.displayContacts();
     addressBook.editContact("Ekta", {address:"Pola Ground", city: "Chhindwara", zip:"480001"});
+    
+    addressBook.displayContacts();
+    addressBook.deleteContact("John");
     addressBook.displayContacts();
     console.log("Total Contacts:", addressBook.countContacts());
-    addressBook.displayContacts();
 } catch (error) {
     console.error(error.message);
 }
