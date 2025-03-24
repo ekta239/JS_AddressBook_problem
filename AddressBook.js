@@ -73,6 +73,17 @@ class AddressBook {
         }
     }
 
+    deleteContact(firstName) {
+        let initialLength = this.contacts.length;
+        this.contacts = this.contacts.filter(c => c.firstName !== firstName);
+
+        if (this.contacts.length < initialLength) {
+            console.log(`Contact '${firstName}' deleted successfully!`);
+        } else {
+            console.log("Contact not found!");
+        }
+    }
+
     displayContacts() {
         console.log("Address Book:", this.contacts);
     }
@@ -89,6 +100,8 @@ try {
 
     addressBook.displayContacts();
     addressBook.editContact("Ekta", {address:"Pola Ground", city: "Chhindwara", zip:"480001"});
+    addressBook.displayContacts();
+    addressBook.deleteContact("John");
     addressBook.displayContacts();
 } catch (error) {
     console.error(error.message);
