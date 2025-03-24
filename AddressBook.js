@@ -84,6 +84,10 @@ class AddressBook {
         }
     }
 
+    countContacts() {
+        return this.contacts.reduce(count => count + 1, 0);
+    }
+
     displayContacts() {
         console.log("Address Book:", this.contacts);
     }
@@ -101,7 +105,7 @@ try {
     addressBook.displayContacts();
     addressBook.editContact("Ekta", {address:"Pola Ground", city: "Chhindwara", zip:"480001"});
     addressBook.displayContacts();
-    addressBook.deleteContact("John");
+    console.log("Total Contacts:", addressBook.countContacts());
     addressBook.displayContacts();
 } catch (error) {
     console.error(error.message);
