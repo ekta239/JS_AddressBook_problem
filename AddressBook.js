@@ -120,6 +120,17 @@ class AddressBook {
     sortByName() {
         this.contacts.sort((a, b) => a.firstName.localeCompare(b.firstName));
     }
+    sortByCity() {
+        this.contacts.sort((a, b) => a.city.localeCompare(b.city));
+    }
+
+    sortByState() {
+        this.contacts.sort((a, b) => a.state.localeCompare(b.state));
+    }
+
+    sortByZip() {
+        this.contacts.sort((a, b) => a.zip.localeCompare(b.zip));
+    }
     displayContacts() {
         console.log("Address Book:", this.contacts);
     }
@@ -145,6 +156,12 @@ try {
     addressBook.viewByCityOrState();
     addressBook.countByCityOrState();
     addressBook.sortByName();
+    addressBook.displayContacts();
+    addressBook.sortByCity();
+    addressBook.displayContacts();
+    addressBook.sortByState();
+    addressBook.displayContacts();
+    addressBook.sortByZip();
     addressBook.displayContacts();
 } catch (error) {
     console.error(error.message);
