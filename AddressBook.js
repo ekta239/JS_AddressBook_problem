@@ -105,7 +105,18 @@ class AddressBook {
         console.log("Persons by State:", stateMap);
     }
 
+    countByCityOrState() {
+        let cityCount = {};
+        let stateCount = {};
 
+        this.contacts.forEach(contact => {
+            cityCount[contact.city] = (cityCount[contact.city] || 0) + 1;
+            stateCount[contact.state] = (stateCount[contact.state] || 0) + 1;
+        });
+
+        console.log("Count by City:", cityCount);
+        console.log("Count by State:", stateCount);
+    }
     displayContacts() {
         console.log("Address Book:", this.contacts);
     }
@@ -129,6 +140,7 @@ try {
     console.log("Total Contacts:", addressBook.countContacts());
     console.log("Searching by City Or State", addressBook.searchByCityOrState("chhindwara", "Madhya Pradesh"));
     addressBook.viewByCityOrState();
+    addressBook.countByCityOrState();
 } catch (error) {
     console.error(error.message);
 }
